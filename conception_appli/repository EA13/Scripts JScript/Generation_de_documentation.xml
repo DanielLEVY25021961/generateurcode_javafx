@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RefData version="1.0" exporter="EA.25">
+	<DataSet name="Automation Scripts" table="t_script" filter="ScriptName='#ScriptName#' and ScriptCategory='#ScriptCategory#'" stoplist=";ScriptID;">
+		<DataRow>
+			<Column name="ScriptID" value="1"/>
+			<Column name="ScriptCategory" value="3955A83E-9E54-4810-8053-FACC68CD4782"/>
+			<Column name="ScriptName" value="{46ED743B-C0B9-4903-AF50-378A9050263E}"/>
+			<Column name="Notes" value="&lt;Group Type=&quot;NORMAL&quot; Notes=&quot;&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="Normal_Group_Daniel_Levy"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="2"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{85174EC0-AECD-405d-82D4-E799BD325720}"/>
+			<Column name="ScriptAuthor" value="{46ED743B-C0B9-4903-AF50-378A9050263E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;JScript-Generer_Plan&quot; Type=&quot;Internal&quot; Language=&quot;JScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="!INC Local Scripts.EAConstants-JScript&#xA;&#xA;var TEMPLATE = &quot;Template_Plan_Activities&quot;;&#xA;var OUTPUT_FILE = &quot;C:\\Users\\dan\\git\\tuto_web_jee1.8.144.git\\tuto_web_jee1.8.144\\conception_appli\\Documentation générée par EA\\Plan.docx&quot;;&#xA;var GUID_MASTER_DOCUMENT = &quot;{01EDB4D9-5BC5-4a44-AF27-0C481F627362}&quot;;&#xA;&#xA;/*&#xA; * Script Name: JScript-Generer_Plan&#xA; * Author: Daniel Lévy&#xA; * Purpose: Générer automatiquement par Script le plan du projet&#xA; * Date: 4/09/2017&#xA; */&#xA; &#xA;function genererPlan() {&#xA;	&#xA;	var projectInterface as EA.Project;&#xA;	&#xA;	projectInterface = Repository.GetProjectInterface();&#xA;	&#xA;	projectInterface.RunReport(GUID_MASTER_DOCUMENT, &quot;&quot;, OUTPUT_FILE);&#xA;		&#xA;}&#xA;&#xA;genererPlan();"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="3"/>
+			<Column name="ScriptCategory" value="3955A83E-9E54-4810-8053-FACC68CD4782"/>
+			<Column name="ScriptName" value="{C459C438-4C6A-49b7-B9A1-6DFBD1C5B17C}"/>
+			<Column name="Notes" value="&lt;Group Type=&quot;PROJBROWSER&quot; Notes=&quot;&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="Browser_Group_Daniel_Levy"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="4"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{5954E1C7-ED22-4b16-993C-C5494C99D070}"/>
+			<Column name="ScriptAuthor" value="{C459C438-4C6A-49b7-B9A1-6DFBD1C5B17C}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;Générer_Plan-JScript&quot; Type=&quot;Internal&quot; Language=&quot;JScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="!INC Local Scripts.EAConstants-JScript&#xA;&#xA;var TEMPLATE = &quot;Template_Plan_Activities&quot;;&#xA;var OUTPUT_FILE = &quot;C:\\Users\\dan\\git\\tuto_web_jee1.8.144.git\\tuto_web_jee1.8.144\\conception_appli\\Documentation générée par EA\\Plan.docx&quot;;&#xA;var GUID_MASTER_DOCUMENT = &quot;{01EDB4D9-5BC5-4a44-AF27-0C481F627362}&quot;;&#xA;&#xA;/*&#xA; * Script Name: Generer_Plan_JScript&#xA; * Author: Daniel Lévy&#xA; * Purpose: Générer automatiquement par Script le plan du projet&#xA; * Date: 4/09/2017&#xA; */&#xA; &#xA;function genererPlan() {&#xA;	&#xA;	var projectInterface as EA.Project;&#xA;	&#xA;	projectInterface = Repository.GetProjectInterface();&#xA;	&#xA;	projectInterface.RunReport(GUID_MASTER_DOCUMENT, &quot;&quot;, OUTPUT_FILE);&#xA;		&#xA;}&#xA;&#xA;genererPlan();"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="5"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{FE4751FC-5DE7-4e0c-86E5-AF5CDF2FD9B2}"/>
+			<Column name="ScriptAuthor" value="{46ED743B-C0B9-4903-AF50-378A9050263E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;JScript-Generer_Livrable&quot; Type=&quot;Internal&quot; Language=&quot;JScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="!INC Local Scripts.EAConstants-JScript&#xA;&#xA;var TEMPLATE = &quot;Template_Package_Note_Diagramme_Linked&quot;;&#xA;var OUTPUT_FILE = &quot;C:\\Users\\dan\\git\\tuto_web_jee1.8.144.git\\tuto_web_jee1.8.144\\conception_appli\\Documentation générée par EA\\Livrable.docx&quot;;&#xA;var GUID_MASTER_DOCUMENT = &quot;{4023291D-9BFC-49b0-8ED2-978CA3A4AC8E}&quot;;&#xA;&#xA;/*&#xA; * Script Name: JScript-Generer_Livrable&#xA; * Author: Daniel Lévy&#xA; * Purpose: Générer automatiquement par Script le livrable du projet&#xA; * Date: 4/09/2017&#xA; */&#xA; &#xA;function genererLivrable() {&#xA;	&#xA;	var projectInterface as EA.Project;&#xA;	&#xA;	projectInterface = Repository.GetProjectInterface();&#xA;	&#xA;	projectInterface.RunReport(GUID_MASTER_DOCUMENT, &quot;&quot;, OUTPUT_FILE);&#xA;		&#xA;}&#xA;&#xA;genererLivrable();"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="6"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{EC4E61DE-2C52-4a37-9D2B-1CACA6691269}"/>
+			<Column name="ScriptAuthor" value="{C459C438-4C6A-49b7-B9A1-6DFBD1C5B17C}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;Générer_Livrable-JScript&quot; Type=&quot;Internal&quot; Language=&quot;JScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="!INC Local Scripts.EAConstants-JScript&#xA;&#xA;var TEMPLATE = &quot;Template_Package_Note_Diagramme_Linked&quot;;&#xA;var OUTPUT_FILE = &quot;C:\\Users\\dan\\git\\tuto_web_jee1.8.144.git\\tuto_web_jee1.8.144\\conception_appli\\Documentation générée par EA\\Livrable.docx&quot;;&#xA;var GUID_MASTER_DOCUMENT = &quot;{4023291D-9BFC-49b0-8ED2-978CA3A4AC8E}&quot;;&#xA;&#xA;/*&#xA; * Script Name: Generer_Livrable-JScript&#xA; * Author: Daniel Lévy&#xA; * Purpose: Générer automatiquement par Script le livrable du projet&#xA; * Date: 4/09/2017&#xA; */&#xA; &#xA;function genererLivrable() {&#xA;	&#xA;	var projectInterface as EA.Project;&#xA;	&#xA;	projectInterface = Repository.GetProjectInterface();&#xA;	&#xA;	projectInterface.RunReport(GUID_MASTER_DOCUMENT, &quot;&quot;, OUTPUT_FILE);&#xA;		&#xA;}&#xA;&#xA;genererLivrable();"/>
+		</DataRow>
+	</DataSet>
+</RefData>

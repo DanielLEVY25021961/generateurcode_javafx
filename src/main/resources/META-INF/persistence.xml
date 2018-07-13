@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- INDIQUE L'UTILISATION DE LA VERSION JPA 2.1 -->
+<!-- http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/index.html#2.1 -->
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+  	http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+
+
+
+	<!-- ============================================================== -->
+	<!-- 			name = nom de l'unité de persistence 				-->
+	<!-- ************************************************************** -->
+	<!-- * transaction-type="RESOURCE_LOCAL" : Application desktop. 	-->
+	<!-- * transaction-type="JTA" : Application Web SANS SPRING			-->
+	<!-- avec serveur applicatif (Tomcat) chargé de fournir 			-->
+	<!-- le EntityManager et de gérer les Transactions. 				-->
+	<!-- * PAS d'attribut transaction-type en cas d'utilisation 		-->
+	<!-- de SPRING. Le Transaction Manager est géré directement      	--> 
+	<!-- par Spring.  													-->
+	<!-- ============================================================== -->
+	
+	<!-- 		WEB SANS SPRING - TOMCAT GERE LES TRANSACTIONS 			-->
+	<!-- <persistence-unit name="persistence_unit_base-generateurcode_javafx" 
+		transaction-type="JTA"> -->
+		
+	<!-- 						STANDALONE							 	-->
+	<persistence-unit name="persistence_unit_base-generateurcode_javafx" transaction-type="RESOURCE_LOCAL">
+
+	<!-- 						AVEC SPRING 5.0.0 						-->
+	<!-- transaction manager géré par SPRING.							-->
+	<!-- Donc, ne pas utiliser l'attribut transaction-type 				-->
+	<!-- <persistence-unit name="persistence_unit_base-generateurcode_javafx">		-->
+
+
+		<!-- ========================================================== -->
+		<!-- 				CHOIX DE L'ORM							    -->
+		<!-- INDIQUE QUE LA PERSISTENCE EST REALISEE PAR HIBERNATE 		-->
+		<!-- ========================================================== -->
+		<!-- * provider : IMPLEMENTATION DE JPA CHOISIE : HIBERNATE. 	-->
+		<!-- Sinon, TopLink, EclipseLink, Ibatis, JDO, ... 				-->
+		<!-- ========================================================== -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+
+
+		<!-- 		PERMET LA RECHERCHE DES CLASSES ANNOTEES 			-->
+		<!--  SANS ETRE OBLIGE DE LES LISTER DANS LE persistence.xml 	-->		
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+
+			<!-- ================================================== -->
+			<!-- Paramétrages Hibernate -->
+			<!-- ================================================== -->
+
+
+		<properties>
+
+					<!-- *********************************	 -->
+		    		<!-- CONNEXION A LA BASE DU PROJET 		 -->
+		    		<!-- (SI STANDALONE. 					 -->
+		    		<!-- Sinon dans context.xml sous SPRING) -->
+		    		<!-- **********************************	 -->
+		<!-- ========================================================= -->
+		<!--    postgresql 9.6.4 - port : 5432 - [postgres, postgres]  -->
+		<!-- ========================================================= -->
+		<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/base-generateurcode_javafx" />
+    		
+		 <!-- ========================================================= -->
+		 <!--         mySql 5.7.19.0 - port : 3306 - [root, root]       -->
+		 <!-- ========================================================= -->   	
+<!-- 		 <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/base-generateurcode_javafx" /> -->
+		
+		<!-- ========================================================= -->
+		<!--                     hsqldb 2.4.0 - [sa,    ]              -->
+		<!-- ========================================================= -->
+	<!-- en mode SERVEUR -->
+<!-- 		<property name="hibernate.connection.url" value="jdbc:hsqldb:hsql://localhost/base-generateurcode_javafx" /> >-->
+    <!-- en mode FILE -->
+<!--        <property name="hibernate.connection.url" value="jdbc:hsqldb:file:D:/Donnees/eclipse/eclipseworkspace_oxygen/adresses_javafx/data/base-generateurcode_javafx-hsqldb/base-generateurcode_javafx" /> -->
+    <!-- en mode MEMORY -->
+<!-- 	   <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:base-generateurcode_javafx" />     -->
+	
+					
+
+					<!-- ********************************** -->
+					<!-- LOGIN, MOT DE PASSE 				-->
+					<!-- (SI STANDALONE. 					-->
+					<!-- Sinon dans context.xml sous SPRING)-->
+					<!-- ********************************** -->
+			
+		<!-- ========================================================= -->
+		<!--    postgresql 9.6.4 - port : 5432 - [postgres, postgres]  -->
+		<!-- ========================================================= --> 
+		<property name="hibernate.connection.username" value="postgres" />
+		<property name="hibernate.connection.password" value="postgres" />
+		
+		<!-- ========================================================= -->
+		<!--         mySql 5.7.19.0 - port : 3306 - [root, root]       -->
+		<!-- ========================================================= -->   		
+<!--     	<property name="hibernate.connection.username" value="root" /> -->
+<!--     	<property name="hibernate.connection.password" value="root" /> -->
+    	
+ 		<!-- ========================================================= -->
+		<!--                     hsqldb 2.4.0  [sa,   ]                -->
+		<!-- ========================================================= -->	
+<!--     	<property name="hibernate.connection.username" value="sa" /> -->
+<!--     	<property name="hibernate.connection.password" value="" />	 -->
+
+
+		
+					<!-- ************************* -->
+					<!-- DRIVER DE BASE DE DONNEES -->
+					<!-- ************************* -->
+		<!-- ========================================================= -->
+		<!--    postgresql 9.6.4 - port : 5432 - [postgres, postgres]  -->
+		<!-- ========================================================= -->
+		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			      
+		 <!-- ========================================================= -->
+		 <!--         mySql 5.7.19.0 - port : 3306 - [root, root]       -->
+		 <!-- ========================================================= -->   	
+<!-- 		 <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" /> -->
+				
+		<!-- ========================================================= -->
+		<!--                     hsqldb 2.4.0 - [sa,    ]              -->
+		<!-- ========================================================= -->
+<!-- 		<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" /> -->
+
+
+		
+						<!-- **************************** -->
+						<!--          DIALECT             -->
+						<!-- **************************** -->
+			<!-- Dialecte que doit utiliser Hibernate pour communiquer 	   -->
+			<!-- avec la BD de l'application.  							   -->
+			<!-- ========================================================= -->
+		    <!--    postgresql 9.6.4 - port : 5432 - [postgres, postgres]  -->
+		    <!-- ========================================================= -->
+    		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect" />
+    		
+		    <!-- ========================================================= -->
+		    <!--         mySql 5.7.19.0 - port : 3306 - [root, root]       -->
+		    <!-- ========================================================= -->   	
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect" /> -->
+			
+			<!-- ========================================================= -->
+		    <!--                     hsqldb 2.4.0 - [sa,    ]              -->
+		    <!-- ========================================================= -->
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" /> -->
+			
+
+		 			<!-- ************************** -->
+					<!-- pour voir les requetes SQL -->
+					<!-- ************************** -->
+
+        	<!-- Montrer toutes les réquêtes générées -->
+	        <property name="hibernate.show_sql" value="true" />
+<!--      	    <property name="hibernate.show_sql" value="false" /> -->
+	        
+	        <!-- Formater le SQL de sortie -->
+			<property name="hibernate.format_sql" value="true" />
+<!-- 			<property name="hibernate.format_sql" value="false" /> -->
+
+			<!-- faciliter le débogage du SQL -->
+			<property name="hibernate.use_sql_comments" value="true" />
+<!--  			<property name="hibernate.use_sql_comments" value="false" /> -->
+
+
+				<!-- *************************************** -->
+				<!-- Pour générer des statistiques Hibernate -->
+				<!-- *************************************** -->
+        	<property name="hibernate.generate_statistics" value="true" />
+<!--         	<property name="hibernate.generate_statistics" value="false" /> -->
+
+
+				<!-- ************************************ -->
+				<!-- Désactiver le cache de second niveau -->
+				<!-- ************************************ -->
+			<property name="cache.provider_class" value="org.hibernate.cache.NoCacheProvider" />	
+
+
+
+		<!-- ******************************************************** -->
+		<!--        ACTIVATION DU CACHE DE SECOND NIVEAU              -->
+		<!--           Easy Hibernate Cache (EhCache)                 -->
+		<!-- (classe EhCacheProvider contenue dans ehcache-1.3.0.jar) -->
+		<!-- ******************************************************** -->		
+<!-- 		<property name="hibernate.cache.provider_class" value="net.sf.ehcache.hibernate.EhCacheProvider" /> -->
+<!-- 		<property name="hibernate.cache.use_second_level_cache" value="true" /> -->
+<!-- 		<property name="hibernate.cache.use_query_cache" value="true" /> -->
+<!-- 		<property name="net.sf.ehcache.configurationResourcename" value="ehcache.xml" /> -->
+
+
+
+			<!-- ========================================================= -->
+			<!--         STRATEGIE DE CONSERVATION DES TABLES              -->
+			<!-- PASSER EN validate pour la PROD.****					   -->
+			<!-- * none (default) : No action will be performed.           -->
+			<!-- * create-only : Database creation will be generated.      -->
+			<!-- * drop : Database dropping will be generated.             -->
+			<!-- * create : Database dropping puis database creation.      -->
+			<!-- * create-drop : Drop + create on startup. drop à la fin.  -->
+			<!-- * validate : Validate the database schema.                -->
+			<!-- * update : Update the database schema.                    -->						   
+			<!-- ========================================================= -->
+			<!-- ******************************************** 	-->
+	    	<!-- Comportement pour la conservation des tables 	-->
+	    	<!-- PASSER EN update pour la PROD.					-->
+			<!-- ******************************************** 	-->		
+			<!-- SUPPRIME et RECREE le schéma à chaque démarrage. 				-->
+			<!-- Drop (SUPPRESSION DU SCHEMA) à chaque fermeture. 				-->
+			<!-- SUPPRIME le schéma après la fermeture de l'application.		-->
+			<!-- Le schéma de la BD est INVISIBLE dans le manager de BD 		-->
+			<!-- après la fermeture de l'application.							-->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+
+
+			<!-- SUPPRIME et RECREE le schéma de base de données au démarrage.   -->
+			<!-- Ne SUPPRIME PAS le schéma après fermeture de l'application.	 -->
+			<!-- Le schéma de la BD est visible dans le manager de BD			 -->
+			<!-- après la fermeture de l'application.							 -->
+			<property name="hibernate.hbm2ddl.auto"  value="create" />
+		
+			<!-- Met à jour le schéma (sans destruction de données) si modification d'une Entity -->
+<!--  			<property name="hibernate.hbm2ddl.auto" value="update" /> -->
+		
+			<!-- VALIDE LE SCHEMA ET CONSERVE LES DONNEES. POUR LA PROD. -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="validate" /> -->
+
+
+					<!-- ***************** -->
+					<!-- Pool de Connexion -->
+					<!-- ***************** -->
+			<!-- NE PAS PRECISER DE POOL DE CONNEXION ICI SI ON 					-->
+			<!-- DEPLOIE L'APPLI SOUS UN TOMCAT. 									-->
+			<!-- TOMCAT SE CHARGERA DU POOL DE CONNEXION 							-->
+			<!-- A PRECISER SI APPLI STANDALONE. 									-->
+<!-- 			<property name="hibernate.c3p0.min_size" value="5" /> -->
+<!-- 		    <property name="hibernate.c3p0.max_size" value="20" /> -->
+<!-- 		    <property name="hibernate.c3p0.timeout" value="500" /> -->
+<!-- 		    <property name="hibernate.c3p0.max_statements" value="50" /> -->
+<!-- 		    <property name="hibernate.c3p0.idle_test_period" value="2000" />                -->
+
+			
+		</properties>
+
+	</persistence-unit>
+
+</persistence>

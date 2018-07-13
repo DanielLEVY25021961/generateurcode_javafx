@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RefData version="1.0" exporter="EA.25">
+	<DataSet name="CSV" table="t_template" filter="TemplateType='#TemplateType#' and TemplateName='#TemplateName#' and Style='#Style#'" stoplist=";TemplateID;">
+		<DataRow>
+			<Column name="TemplateID" value="{F93D39B0-FBFD-4c69-ABCE-E209231476F8}"/>
+			<Column name="TemplateType" value="CSV"/>
+			<Column name="TemplateName" value="Specification_exigences_simples_en_csv.csv"/>
+			<Column name="Notes" value="Description du format d'import/export des exigences simples en csv. Le séparateur est ;"/>
+			<Column name="Style" value="D:\Donnees\eclipse\eclipseworkspace_neon\tuto_web_jee1.8.144\conception_appli\Documentation générée par EA\exigences.csv"/>
+			<Column name="Template" value="delim=*;direction=1;field0=Name;field1=Notes;field2=Type;field3=Stereotype;elementTypes=Requirement;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{0F3DC4C3-BA57-4902-A590-0F2FE355A2B6}"/>
+			<Column name="TemplateType" value="CSV"/>
+			<Column name="TemplateName" value="Specification_export_CU_en_csv.csv"/>
+			<Column name="Notes" value="Csv Exchange Specification pour l'export des CU d'un Package en csv avec un délimiteur ';'"/>
+			<Column name="Style" value="D:\Donnees\eclipse\eclipseworkspace_neon\tuto_web_jee1.8.144\conception_appli\Documentation générée par EA\CU.csv"/>
+			<Column name="Template" value="delim=*;direction=1;field0=Name;field1=Notes;elementTypes=UseCase;"/>
+		</DataRow>
+		<DataRow>
+			<Column name="TemplateID" value="{2A0F139D-7174-403b-9546-AD8B4C90C0E0}"/>
+			<Column name="TemplateType" value="CSV"/>
+			<Column name="TemplateName" value="Specification_export_Actor_en_csv.csv"/>
+			<Column name="Notes" value="Csv Exchange Specification pour l'export des Acteurs d'un Package en csv avec délimiteur ';'"/>
+			<Column name="Style" value="D:\Donnees\eclipse\eclipseworkspace_neon\tuto_web_jee1.8.144\conception_appli\Documentation générée par EA\Acteurs.csv"/>
+			<Column name="Template" value="delim=*;direction=1;field0=Name;field1=Notes;elementTypes=Actor;"/>
+		</DataRow>
+	</DataSet>
+</RefData>

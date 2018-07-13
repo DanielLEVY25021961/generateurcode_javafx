@@ -1,0 +1,44 @@
+http://download.nust.na/pub6/mysql/doc/refman/5.0/fr/time-zone-support.html
+https://dev.mysql.com/doc/refman/5.7/en/time-zone-support.html
+https://dev.mysql.com/doc/refman/5.7/en/system-database.html#system-database-time-zone-tables
+https://dev.mysql.com/downloads/timezones.html
+
+MySQL 5.7.22 contient dans sa base interne "mysql" des tables pour la gestion
+des fuseaux horaires (Timezone) NON REMPLIES.
+
+Ces tables sont :
+- time_zone
+- time_zone_leap_second
+- time_zone_name
+- time_zone_transition, time_zone_transition_type
+
+
+les tables contenant les TimeZone doivent être remplies A LA MANO 
+dans la base interne "mysql".
+
+Pour voir apparaitre la base interne mysql dans MySQL Workbench 6.3
+, il faut éventuellement cocher la case 
+"Show metadata and Internal Schemas" dans le Workbench MySQL.
+
+Menu Edit > Preferences > SQL Editor > dans le cadre sidebar, 
+cocher la case "Show metadata and Internal Schemas".
+
+
+Il faut télécharger les tables de TimeZone ici :
+https://dev.mysql.com/downloads/timezones.html
+
+télécharger le fichier timezone_2018e_posix_sql.zip - POSIX standard
+
+Une fois dézippé, ce fichier est un script SQL.
+Il faut jouer jouer le script SQL dans la base "mysql"
+
+Exécuter dans une fenêtre SQL de MySQL
+
+LES TABLES DE TIMEZONE SONT ALORS ALIMENTEES.
+
+POUR METTRE LE SERVEUR MySql 5.7.22 à l'heure de Paris,
+Il faut jouer le script dans une fenêtre SQL du WorkBench 
+(avec le Grant Administrateur) :
+
+set time_zone = 'Europe/Paris';
+SET GLOBAL time_zone = 'Europe/Paris';
