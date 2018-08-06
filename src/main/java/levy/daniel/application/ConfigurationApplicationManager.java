@@ -45,12 +45,12 @@ import levy.daniel.application.apptechnic.exceptions.technical.impl.FichierInexi
  *
  * - Exemple d'utilisation :<br/>
  * <code> // <i>Récupération du ResourceBundle encapsulant 
- * 'application.properties'.</i></code><br/>
+ * 'application.properties'</i>.</code><br/>
  * <code>final ResourceBundle bundleApplication 
  * = ConfigurationApplicationManager.getBundleApplication();</code><br/>
- * <code></i>// RAPPORT AU FORMAT CSV si problème (le rapport est alors non null)</i>.</code><br/>
+ * <code>// <i>RAPPORT AU FORMAT CSV si problème (le rapport est alors non null)</i>.</code><br/>
  * <code>ConfigurationApplicationManager.getRapportConfigurationCsv().</code><br/> 
- *<br/>
+ * <br/>
  * 
  * - Mots-clé :<br/>
  * pattern délégation, DELEGATION, <br/>
