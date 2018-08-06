@@ -44,12 +44,12 @@ import levy.daniel.application.apptechnic.exceptions.technical.impl.FichierInexi
  * </ul>
  *
  * - Exemple d'utilisation :<br/>
- * <code> // Récupération du ResourceBundle encapsulant 
- * 'application.properties'.<br/></code>
+ * <code> // <i>Récupération du ResourceBundle encapsulant 
+ * 'application.properties'.</i></code><br/>
  * <code>final ResourceBundle bundleApplication 
- * = ConfigurationApplicationManager.getBundleApplication();<br/>
- * // RAPPORT AU FORMAT CSV si problème (le rapport est alors non null).<br/>
- * ConfigurationApplicationManager.getRapportConfigurationCsv().</code><br/> 
+ * = ConfigurationApplicationManager.getBundleApplication();</code><br/>
+ * <code></i>// RAPPORT AU FORMAT CSV si problème (le rapport est alors non null)</i>.</code><br/>
+ * <code>ConfigurationApplicationManager.getRapportConfigurationCsv().</code><br/> 
  *<br/>
  * 
  * - Mots-clé :<br/>
