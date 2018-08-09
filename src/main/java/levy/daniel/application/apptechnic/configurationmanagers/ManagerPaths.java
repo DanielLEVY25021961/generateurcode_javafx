@@ -37,6 +37,7 @@ import org.apache.commons.logging.LogFactory;
  * séparateur de fichiers, separateur, antislash, <br/>
  * Singleton, singleton, <br/>
  * transformer String en Path, Paths.get(String), <br/>
+ * chemin universel, chemin Linux,<br/>
  * <br/>
  *
  * - Dépendances :<br/>
