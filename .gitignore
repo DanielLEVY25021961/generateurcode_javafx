@@ -1,3 +1,5 @@
 /.checkstyle
 /.pmd
 /target/
+/.classpath
+/.project
